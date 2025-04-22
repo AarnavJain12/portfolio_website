@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio - Skills & Education</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f0f0;
+      line-height: 1.6;
+    }
+    section {
+      padding: 60px 20px;
+    }
+    h2, h3 {
+      margin-bottom: 10px;
+    }
+
+    /* Profile Photo */
+    .profile-container {
+      text-align: center;
+      padding: 40px;
+    }
+    .profile-photo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #6c63ff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      margin-bottom: 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .skills-section {
+      background-color: #fff;
+    }
+
+    .left {
+      flex: 1 1 300px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 20px;
+    }
+
+    .progress-card {
+      background-color: #f7f7ff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .progress-card:hover {
+      transform: translateY(-5px);
+      background-color: #eef0ff;
+    }
+
+    .circle {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .right {
+      flex: 1 1 400px;
+    }
+
+    .text-content h3 {
+      font-size: 20px;
+      color: #6c63ff;
+    }
+
+    .text-content h2 {
+      font-size: 28px;
+      color: #333;
+      margin: 10px 0;
+    }
+
+    .download-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #6c63ff;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    .download-btn:hover {
+      background-color: #5851d3;
+    }
+
+    .education-section {
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+
+    .education-container h2 {
+      font-size: 32px;
+      color: #6c63ff;
+      margin-bottom: 30px;
+      transition: color 0.3s ease;
+    }
+
+    .education-container h2:hover {
+      color: #4b43cc;
+    }
+
+    .education-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .education-table th,
+    .education-table td {
+      padding: 15px;
+      border: 1px solid #ddd;
+      font-size: 16px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .education-table th {
+      background-color: #6c63ff;
+      color: white;
+      cursor: pointer;
+    }
+
+    .education-table tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .education-table tr:hover {
+      background-color: #e0e0ff;
+      transform: scale(1.01);
+      cursor: pointer;
+    }
+
+    .expandable-content {
+      display: none;
+      background-color: #f9f9ff;
+      font-size: 15px;
+      color: #333;
+    }
+
+    .expanded + .expandable-content {
+      display: table-row;
+    }
+
+    .certification-section {
+      background-color: #fff;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .certification-section h2 {
+      color: #6c63ff;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .certification-images {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .certification-images img {
+      width: 250px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      .text-content h2 {
+        font-size: 24px;
+      }
+      .education-table th,
+      .education-table td {
+        font-size: 14px;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Profile Section -->
+  <section class="profile-section" id="profile">
+    <div class="profile-container">
+      <img src="your-profile-photo.jpg" alt="Profile Photo" class="profile-photo">
+      <h2>About Me</h2>
+      <p>
+        I’m a motivated and goal-oriented BBA student at the Indian Institute of Management with a strong foundation in trading, digital marketing, and effective communication. Passionate about financial markets and entrepreneurship, I bring hands-on experience from volunteering and academic projects. Skilled in leadership, networking, and critical thinking, I aim to leverage my knowledge and certifications in trading strategies to build impactful ventures and drive growth.
+      </p>
+    </div>
+  </section>
+
+  <!-- Volunteering -->
+  <section class="volunteer-section" id="volunteering">
+    <div class="volunteer-container">
+      <h2>Volunteering Experience</h2>
+      <p>
+        Volunteering at an NGO was a deeply enriching experience that allowed me to connect with people from diverse backgrounds and contribute meaningfully to a cause greater than myself...
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="skills-section" id="about">
+    <div class="container">
+      <div class="left">
+        <div class="progress-card"><div class="circle">📈</div><p>Trading & Market Analysis</p></div>
+        <div class="progress-card"><div class="circle">💻</div><p>Web Development</p></div>
+        <div class="progress-card"><div class="circle">🌐</div><p>Networking & Collaboration</p></div>
+        <div class="progress-card"><div class="circle">⏳</div><p>Time Management</p></div>
+        <div class="progress-card"><div class="circle">🧑‍💼</div><p>Leadership</p></div>
+        <div class="progress-card"><div class="circle">🗣️</div><p>Effective Communication</p></div>
+        <div class="progress-card"><div class="circle">🧠</div><p>Critical Thinking</p></div>
+        <div class="progress-card"><div class="circle">📣</div><p>Digital Marketing</p></div>
+      </div>
+      <div class="right">
+        <div class="text-content">
+          <h3>My Skills</h3>
+          <h2>Practical & Creative Digital Expertise</h2>
+          <p>I’m passionate about building things that matter — from websites to trading strategies...</p>
+          <a href="resume.pdf" download="SampleCV" class="download-btn">Download CV</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section class="certification-section" id="certifications">
+    <h2>Certifications</h2>
+    <div class="certification-images">
+      <img src="WhatsApp Image 2025-04-18 at 22.19.31_dd95f538.jpg" alt="Certificate 1">
+      <img src="WhatsApp Image 2025-04-18 at 22.19.31_e67c14dc.jpg" alt="Certificate 2">
+      <img src="WhatsApp Image 2025-04-18 at 22.19.32_5fb21e05.jpg" alt="Certificate 3">
+      <img src="WhatsApp Image 2025-04-18 at 22.19.33_f1bbecb8.jpg" alt="Certificate 4">
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section class="education-section" id="education">
+    <div class="education-container">
+      <h2>My Education</h2>
+      <table class="education-table">
+        <thead>
+          <tr>
+            <th>Institution</th>
+            <th>Degree</th>
+            <th>Year</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="expand-toggle">
+            <td>IIM BANGALORE</td>
+            <td>BBA</td>
+            <td>2021 - 2025</td>
+          </tr>
+          <tr class="expandable-content">
+            <td colspan="3"><strong>Highlights:</strong> Completed core CS courses, participated in hackathons, and built ML projects.<br>CGPA: 8.4/10</td>
+          </tr>
+          <tr class="expand-toggle">
+            <td>Sagar Public School</td>
+            <td>Higher Secondary</td>
+            <td>2022 - 2024</td>
+          </tr>
+          <tr class="expandable-content">
+            <td colspan="3"><strong>Highlights:</strong> PCM with Computer Science. Scored 91% in boards.<br>Extracurricular: Coding club leader</td>
+          </tr>
+          <tr class="expand-toggle">
+            <td>Sagar Public School</td>
+            <td>Secondary School</td>
+            <td>2010 - 2022</td>
+          </tr>
+          <tr class="expandable-content">
+            <td colspan="3"><strong>Highlights:</strong> Strong foundation in science and math.<br>Participated in Olympiads and debates.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Expandable Script -->
+  <script>
+    const rows = document.querySelectorAll(".expand-toggle");
+    rows.forEach(row => {
+      row.addEventListener("click", () => {
+        row.classList.toggle("expanded");
+      });
+    });
+  </script>
+
+</body>
+</html>
